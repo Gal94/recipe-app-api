@@ -1,0 +1,14 @@
+version: "3"
+
+# Going to have a service called app and the build context is . (all files in the main directory)
+services: 
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    # Allow auto updates to the container from the local app directory to the container app directory
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
