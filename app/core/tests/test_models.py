@@ -36,6 +36,6 @@ class ModelTests(TestCase):
             'test123'
         )
 
-        # is_superuser part of the PermissionsMixins 
+        # is_superuser part of the PermissionsMixins
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff)
