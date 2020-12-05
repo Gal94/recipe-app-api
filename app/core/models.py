@@ -13,7 +13,7 @@ class UserManager(BaseUserManager):
         user = self.model(email=self.normalize_email(email), **extra_fields)
         # Encrypt the password
         user.set_password(password)
-        # Support for multiple dbs
+        # Support for multiple databases
         user.save(using=self._db)
 
         return user
